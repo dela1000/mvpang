@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#quoteContainer{
+  display: block;
+  position:absolute;
+  top: 28%;
+  left: 31%;
+  text-align: center;
+  max-width: 500px;
+}
+
+#centerQuote{
+  display: inline-block;
+  position: relative;
+}
+
+#quoteText{
+  text-align: center;
+  font-size: 35px;
+  color: black;
+  font-weight: bold;
+}
+
+#quoteAuthor{
+  font-size: 15px;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+}
+
+#weatherContainer{
+  position: fixed;
+  left: 30px;
+  top: 30px;
+}
+
+#weatherContainer h4{
+  padding: 1px;
+  margin: 0px;
+}
+
+.imgHolder{
+  overflow: hidden;
+}
+
+.imgHolder img{
+  width:100%;
+}
