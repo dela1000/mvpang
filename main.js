@@ -4,6 +4,7 @@ angular.module('homeApp.main', [])
   $scope.zip = {};
   $scope.quoteData = {};
   $scope.weatherData = {};
+  $scope.movieData = {};
 
   $scope.getZipCode = function () {
     Quotes.getZipCode()
@@ -31,6 +32,19 @@ angular.module('homeApp.main', [])
     })
   }
 
+  $scope.getMovies = function () {
+    Quotes.getMovies()
+    .then(function (movieData) {
+      console.log("movieData.data: ", JSON.stringify(movieData.data, null, "\t"));
+      if (movieData.data.Title) {
+        $scope.movieData.title = movieData.data.Title;
+      } else if (movieData.data.Response === "False") {
+        $scope.movieData.title = "Jurassic Park";
+      }
+    })
+  }
+
   $scope.getZipCode()
   $scope.getQuotes()
+  $scope.getMovies()
 })

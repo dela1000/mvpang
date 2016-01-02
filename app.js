@@ -4,9 +4,11 @@ angular.module('homeApp', [
   'ngRoute'
   ])
 .config(function($routeProvider) {
+  var MainController = 'MainController';
   $routeProvider
   .when('/', {
     templateUrl: 'main.html',
-    controller: 'MainController'
+    controller: MainController,
+    resolve: MainController.resolve
   })
 })

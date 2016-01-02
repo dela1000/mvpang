@@ -60,3 +60,9 @@ body {
   min-width: 50%;
   min-height: 50%;
 }
+
+#movieTitle{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}

@@ -16,6 +16,19 @@ angular.module('homeApp.services', [])
     })
   }
 
+  var getMovies = function () {
+    var randomID = Math.floor(Math.random()*1000000);
+
+    return  $http({
+      method: 'GET',
+      url: 'http://www.omdbapi.com/?i=tt1'+randomID+'&tomatoes=true&plot=full'
+    })
+    .success(function(response) {
+      return response
+    });
+  };
+
+
   var getQuotes = function () {
     return $http({
       method: 'GET',
@@ -43,6 +56,7 @@ angular.module('homeApp.services', [])
   return {
     getZipCode: getZipCode,
     getQuotes: getQuotes,
-    getWeather: getWeather
+    getWeather: getWeather,
+    getMovies: getMovies
   }
 })
