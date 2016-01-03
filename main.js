@@ -42,25 +42,29 @@ angular.module('homeApp.main', [])
   $scope.getMovies = function () {
     Main.getMovies()
     .then(function (movieData) {
-      if (movieData.data.Title) {
-        $scope.movieData.title = movieData.data.Title;
-      } else {
-        $scope.movieData.title = "Jurassic Park";
-      }
+      console.log("movieData: ", JSON.stringify(movieData, null, "\t"));
+      for (var i = 0; i < movieData.data.movies.length; i++) {
+        $scope.movieData[movieData.data.movies[i].title] = {
+          title: movieData.data.movies[i].title,
+          release: movieData.data.movies[i].release_dates.theater,
+          poster: movieData.data.movies[i].posters.thumbnail,
+          link: movieData.data.movies[i].links.alternate,
+          synopsis: movieData.data.movies[i].synopsis
+        }
+      };
     })
-    var movieClick = function () {
-    movieData.data.Poster
-    };
   }
 
   $scope.getImage = function () {
     Main.getImage()
     .then(function (imageData) {
       if (imageData.url) {
-        $scope.imageData = imageData.url
-
+        $scope.imageData.url = imageData.url
+        $scope.imageData.title = imageData.title
+        $scope.imageData.explanation = imageData.explanation
       }else{
-        $scope.imageData = "smp.jpg"
+        $scope.imageData.url = "smp.jpg"
+
       };
       $scope.getZipCode(); // These are here so they are called
       $scope.getQuotes();  // after the background image has

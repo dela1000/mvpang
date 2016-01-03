@@ -52,7 +52,6 @@ a:visited {
   top:-4px;
 }
 
-
 #weatherContainer{
   position: fixed;
   left: 30px;
@@ -65,6 +64,7 @@ a:visited {
   margin: 0px;
   text-decoration: none !important;
 }
+
 #weatherContainer a:visited{
   color:#ededed;
 }
@@ -72,7 +72,18 @@ a:visited {
 #movieContainer{
   position: fixed;
   right: 30px;
-  bottom: 30px;
+  bottom: 5px;
+}
+
+#movieContainer div{
+  list-style-type: none;
+  float: left;
+  width: 90px;
+  text-align: center;
+  font-size: 12px;
+}
+.posterContainer{
+  height: 85px;
 }
 
 #imgHolder{
@@ -93,4 +104,13 @@ a:visited {
   margin: auto;
   min-width: 50%;
   min-height: 50%;
+}
+
+#imgTitleContainer{
+  position: fixed;
+  left: 30px;
+  bottom: 25px;
+  color:#ededed;
+  text-align: center;
+  font-size: 12px;
 }

@@ -18,11 +18,15 @@ angular.module('homeApp.services', [])
     })
   }
 
+  //Had to all the callback to get over the "uncaught error :" problem caused by JSONP
+  var movieAPIkey = 'ny97sdcpqetasj8a4v2na8va'
+
   var getMovies = function () {
     var randomID = Math.floor(Math.random()*1000000);
     return  $http({
-      method: 'GET',
-      url: 'http://www.omdbapi.com/?i=tt1'+randomID+'&tomatoes=true&plot=full'
+      url: 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey='+movieAPIkey+'&callback=JSON_CALLBACK',
+      jsonp: 'callback',
+      method: 'JSONP'
     })
     .success(function(response) {
       return response
