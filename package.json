@@ -1,28 +1,37 @@
 {
-  "name": "angular",
-  "version": "1.4.8",
-  "description": "HTML enhanced for web apps",
-  "main": "index.js",
+  "name": "mvpproject",
+  "version": "1.0.0",
+  "description": "MVP Project - MKS29",
+  "main": "main.js",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "body-parser": "^1.14.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "kerberos": "0.0.17",
+    "mongodb": "^2.1.2",
+    "mongoose": "^4.3.4",
+    "morgan": "^1.6.1",
+    "node": "0.0.0",
+    "path": "^0.12.7",
+    "request": "^2.67.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/angular/angular.js.git"
+    "url": "git+https://github.com/dela1000/mvpang.git"
   },
-  "keywords": [
-    "angular",
-    "framework",
-    "browser",
-    "client-side"
-  ],
-  "author": "Angular Core Team <angular-core+npm@google.com>",
-  "license": "MIT",
+  "author": "Daniel",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/angular/angular.js/issues"
+    "url": "https://github.com/dela1000/mvpang/issues"
   },
-  "homepage": "http://angularjs.org",
-  "dependencies": {},
-  "devDependencies": {}
+  "homepage": "https://github.com/dela1000/mvpang#readme",
+  "engines": {
+    "node": "3.3.12"
+  }
 }

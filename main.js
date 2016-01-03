@@ -42,7 +42,6 @@ angular.module('homeApp.main', [])
   $scope.getMovies = function () {
     Main.getMovies()
     .then(function (movieData) {
-      console.log("movieData: ", JSON.stringify(movieData, null, "\t"));
       for (var i = 0; i < movieData.data.movies.length; i++) {
         $scope.movieData[movieData.data.movies[i].title] = {
           title: movieData.data.movies[i].title,
