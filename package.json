@@ -5,9 +5,11 @@
   "main": "main.js",
   "dependencies": {
     "angular": "^1.4.8",
+    "angular-route": "^1.4.8",
     "body-parser": "^1.14.2",
     "bower": "^1.7.2",
     "cors": "^2.7.1",
+    "d3": "^3.5.12",
     "express": "^4.13.3",
     "kerberos": "0.0.17",
     "mongodb": "^2.1.2",
