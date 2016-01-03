@@ -13,7 +13,7 @@ angular.module('homeApp.services', [])
     })
     .then(function (response) {
       zipCode = response.data.postal
-      urlWeatherRequest = '//api.openweathermap.org/data/2.5/weather?zip='+zipCode+',us&appid='+zipKey+''
+      urlWeatherRequest = 'https://api.openweathermap.org/data/2.5/weather?zip='+zipCode+',us&appid='+zipKey+''
       return zipCode
     })
   }
@@ -24,7 +24,7 @@ angular.module('homeApp.services', [])
   var getMovies = function () {
     var randomID = Math.floor(Math.random()*1000000);
     return  $http({
-      url: '//api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey='+movieAPIkey+'&callback=JSON_CALLBACK',
+      url: 'https://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey='+movieAPIkey+'&callback=JSON_CALLBACK',
       jsonp: 'callback',
       method: 'JSONP'
     })
@@ -36,7 +36,7 @@ angular.module('homeApp.services', [])
   var getQuotes = function () {
     return $http({
       method: 'GET',
-      url: '//api.theysaidso.com/qod'
+      url: 'https://api.theysaidso.com/qod'
     })
     .then(function (response) {
       return response.data.contents.quotes[0]
@@ -62,7 +62,7 @@ angular.module('homeApp.services', [])
   var getImage = function () {
     return $http({
       method: 'GET',
-      url: '//api.nasa.gov/planetary/apod?api_key='+apodKey+''
+      url: 'https://api.nasa.gov/planetary/apod?api_key='+apodKey+''
     })
     .then(function (response) {
       return response.data
