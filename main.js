@@ -9,20 +9,9 @@ angular.module('homeApp.main', [])
 
   $scope.getZipCode = function () {
     Quotes.getZipCode()
-    .then(function () {
+    .then(function (data) {
+      $scope.weatherData.zip = data
       $scope.getWeather()
-    })
-  }
-
-  $scope.getQuotes = function () {
-    Quotes.getQuotes()
-    .then(function (quoteData) {
-      if (quoteData) {
-        $scope.quoteData = quoteData;
-      }else{
-        $scope.quoteData.quote = "One can never know for sure what a deserted area looks like."
-        $scope.quoteData.author = "George Carlin"
-      };;
     })
   }
 
@@ -35,6 +24,18 @@ angular.module('homeApp.main', [])
       toFarenheith = toFarenheith.toFixed(0)
       $scope.weatherData.temp = toFarenheith;
       $scope.weatherData.city = city;
+    })
+  }
+
+  $scope.getQuotes = function () {
+    Quotes.getQuotes()
+    .then(function (quoteData) {
+      if (quoteData) {
+        $scope.quoteData = quoteData;
+      }else{
+        $scope.quoteData.quote = "One can never know for sure what a deserted area looks like."
+        $scope.quoteData.author = "George Carlin"
+      };;
     })
   }
 

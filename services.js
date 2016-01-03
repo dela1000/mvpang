@@ -14,12 +14,12 @@ angular.module('homeApp.services', [])
     .then(function (response) {
       zipCode = response.data.postal
       urlWeatherRequest = 'http://api.openweathermap.org/data/2.5/weather?zip='+zipCode+',us&appid='+zipKey+''
+      return zipCode
     })
   }
 
   var getMovies = function () {
     var randomID = Math.floor(Math.random()*1000000);
-
     return  $http({
       method: 'GET',
       url: 'http://www.omdbapi.com/?i=tt1'+randomID+'&tomatoes=true&plot=full'
@@ -28,7 +28,6 @@ angular.module('homeApp.services', [])
       return response
     });
   };
-
 
   var getQuotes = function () {
     return $http({

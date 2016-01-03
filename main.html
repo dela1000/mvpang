@@ -1,20 +1,19 @@
-<div id="imgHolder">
-  <img ng-src="{{imageData}}">
+<div id='imgHolder'>
+  <img ng-src='{{imageData}}'>
 </div>
 
 <div id='quoteContainer'>
   <div id='centerQuote'>
     <h4><a id='quoteText'>{{quoteData.quote}}</a></h4>
-    <h4><a ng-href= "https://www.google.com/#q={{quoteData.author}}" ng-click="searchAuthor" id='quoteAuthor'>{{quoteData.author}}</a></h4>
+    <h4><a ng-href= 'https://www.google.com/#q={{quoteData.author}}" ng-click="searchAuthor' id='quoteAuthor'>{{quoteData.author}}</a></h4>
   </div>
 </div>
 
 <div id='weatherContainer'>
-  <h4><i class="fa fa-sun-o"></i><a id='weatherTemp'> {{weatherData.temp}}&#176;</a></h4>
-  <h4><a id='weatherCity'>{{weatherData.city}}</a></h4>
+  <h4><i class='fa fa-sun-o'></i><a id='weatherTemp'> {{weatherData.temp}}&#176;</a></h4>
+  <h4><a ng-href='http://www.weather.com/weather/today/l/{{weatherData.zip}}:US' id='weatherCity'>{{weatherData.city}}</a></h4>
 </div>
 
 <div id='movieContainer'>
-  <h4><a id='movieTitle'>{{movieData.title}}</a></h4>
+  <h4><a ng-href = 'http://www.imdb.com/find?ref_=nv_sr_fn&q={{movieData.title}}&s=all' id='movieTitle'>{{movieData.title}}</a></h4>
 </div>
-

@@ -3,7 +3,16 @@ body {
   overflow: hidden;
   color: #ededed;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+a {
+  color:#ededed;
+  text-decoration: none !important;
+}
+
+a:visited {
+  color:#ededed;
 }
 
 #quoteContainer{
@@ -30,17 +39,28 @@ body {
   font-size: 15px;
   font-style: italic;
   text-align: center;
+  text-decoration: none !important;
 }
+
 
 #weatherContainer{
   position: fixed;
   left: 30px;
   top: 30px;
+  color:#ededed;
 }
 
 #weatherContainer h4{
   padding: 1px;
   margin: 0px;
+  text-decoration: none !important;
+}
+#weatherContainer a:visited{
+  color:#ededed;
+}
+
+#weatherCity{
+  text-decoration: none !important;
 }
 
 #imgHolder{
