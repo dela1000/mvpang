@@ -10,7 +10,7 @@ body {
 a {
   color:#ededed;
   text-decoration: none !important;
-  text-shadow: 2px 2px black;
+  text-shadow: 1px 1px black;
 }
 
 a:visited {

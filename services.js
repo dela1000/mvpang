@@ -58,7 +58,7 @@ angular.module('homeApp.services', [])
   var getImage = function () {
     return $http({
       method: 'GET',
-      url: 'https://api.nasa.gov/planetary/apod?api_key='+apodKey+'&format=JSON'
+      url: 'https://api.nasa.gov/planetary/apod?api_key='+apodKey+''
     })
     .then(function (response) {
       return response.data
