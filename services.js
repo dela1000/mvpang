@@ -7,7 +7,7 @@ angular.module('homeApp.services', [])
   var zipKey = '2dbfcf67fd57090032db293a66c5ae52'
 
   var getZipCode = function () {
-    return $https({
+    return $http({
       method: 'GET',
       url: 'http://ipinfo.io'
     })
