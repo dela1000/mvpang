@@ -1,4 +1,5 @@
 body {
+  opacity: 0;
   margin: 0;
   overflow: hidden;
   color: #ededed;
@@ -36,10 +37,10 @@ a:visited {
 }
 
 #quoteAuthor{
+  text-decoration: none !important;
   font-size: 15px;
   font-style: italic;
   text-align: center;
-  text-decoration: none !important;
 }
 
 
@@ -63,12 +64,20 @@ a:visited {
   text-decoration: none !important;
 }
 
+
+#movieTitle{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
 #imgHolder{
   position: fixed;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
+  z-index: -9999;
 }
 
 #imgHolder img{
@@ -80,10 +89,4 @@ a:visited {
   margin: auto;
   min-width: 50%;
   min-height: 50%;
-}
-
-#movieTitle{
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
 }

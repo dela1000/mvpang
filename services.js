@@ -1,7 +1,7 @@
 angular.module('homeApp.services', [])
 
-.factory('Quotes', function ($http) {
-  var Quotes = {};
+.factory('Main', function ($http) {
+  var Main = {};
 
   var zipCode;
   var zipKey = '2dbfcf67fd57090032db293a66c5ae52'

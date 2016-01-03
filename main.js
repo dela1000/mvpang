@@ -1,6 +1,6 @@
 angular.module('homeApp.main', [])
 
-.controller('MainController', function ($scope, Quotes){
+.controller('MainController', function ($scope, Main){
   $scope.zip = {};
   $scope.quoteData = {};
   $scope.weatherData = {};
@@ -8,7 +8,7 @@ angular.module('homeApp.main', [])
   $scope.imageData = {};
 
   $scope.getZipCode = function () {
-    Quotes.getZipCode()
+    Main.getZipCode()
     .then(function (data) {
       $scope.weatherData.zip = data
       $scope.getWeather()
@@ -16,7 +16,7 @@ angular.module('homeApp.main', [])
   }
 
   $scope.getWeather = function () {
-    Quotes.getWeather()
+    Main.getWeather()
     .then(function (weatherData) {
       var temp = weatherData.main.temp
       var city = weatherData.name
@@ -28,23 +28,23 @@ angular.module('homeApp.main', [])
   }
 
   $scope.getQuotes = function () {
-    Quotes.getQuotes()
+    Main.getQuotes()
     .then(function (quoteData) {
       if (quoteData) {
         $scope.quoteData = quoteData;
       }else{
-        $scope.quoteData.quote = "One can never know for sure what a deserted area looks like."
+        $scope.quoteData.quote = "'Meow' means “woof” in cat."
         $scope.quoteData.author = "George Carlin"
       };;
     })
   }
 
   $scope.getMovies = function () {
-    Quotes.getMovies()
+    Main.getMovies()
     .then(function (movieData) {
       if (movieData.data.Title) {
         $scope.movieData.title = movieData.data.Title;
-      } else if (movieData.data.Response === "False") {
+      } else {
         $scope.movieData.title = "Jurassic Park";
       }
     })
@@ -54,20 +54,19 @@ angular.module('homeApp.main', [])
   }
 
   $scope.getImage = function () {
-    Quotes.getImage()
+    Main.getImage()
     .then(function (imageData) {
       if (imageData.url) {
         $scope.imageData = imageData.url
 
       }else{
-        $scope.imageData = "http://alikgriffin.com/sites/default/files/AlikGriffin_Santa_Monica_Pier_HDR_s.jpg"
+        $scope.imageData = "smp.jpg"
       };
+      $scope.getZipCode(); // These are here so they are called
+      $scope.getQuotes();  // after the background image has
+      $scope.getMovies();  // loaded
     })
   }
 
-  $scope.getImage();
-  $scope.getZipCode();
-  $scope.getQuotes();
-  $scope.getMovies();
-
+  $scope.getImage(); // first API call
 })
