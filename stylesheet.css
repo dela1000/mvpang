@@ -3,13 +3,14 @@ body {
   overflow: hidden;
   color: #ededed;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-decoration: none;
 }
 
 #quoteContainer{
   position:absolute;
   width: 100%;
   z-index:15;
-  top:40%;
+  top:46%;
   left:37%;
   text-align: center;
   margin:-100px auto auto -160px;
@@ -44,7 +45,7 @@ body {
 
 #imgHolder{
   position: fixed;
-  top: -25%;
+  top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;

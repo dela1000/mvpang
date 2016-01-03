@@ -4,6 +4,7 @@ angular.module('homeApp.services', [])
   var Quotes = {};
 
   var zipCode;
+  var zipKey = '2dbfcf67fd57090032db293a66c5ae52'
 
   var getZipCode = function () {
     return $http({
@@ -12,7 +13,7 @@ angular.module('homeApp.services', [])
     })
     .then(function (response) {
       zipCode = response.data.postal
-      urlWeatherRequest = 'http://api.openweathermap.org/data/2.5/weather?zip='+zipCode+',us&appid=2dbfcf67fd57090032db293a66c5ae52'
+      urlWeatherRequest = 'http://api.openweathermap.org/data/2.5/weather?zip='+zipCode+',us&appid='+zipKey+''
     })
   }
 
@@ -41,7 +42,7 @@ angular.module('homeApp.services', [])
 
   //http://openweathermap.org/current for info.
 
-  var urlWeatherRequest
+  var urlWeatherRequest;
 
   var getWeather = function () {
     return $http({
@@ -53,7 +54,20 @@ angular.module('homeApp.services', [])
     })
   };
 
+  var apodKey = '1qi6sjylF9PYuAyEziSc2snDjLJxJs9YnLgldJQY';
+
+  var getImage = function () {
+    return $http({
+      method: 'GET',
+      url: 'https://api.nasa.gov/planetary/apod?api_key='+apodKey+'&format=JSON'
+    })
+    .then(function (response) {
+      return response.data
+    })
+  }
+
   return {
+    getImage: getImage,
     getZipCode: getZipCode,
     getQuotes: getQuotes,
     getWeather: getWeather,

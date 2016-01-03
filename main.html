@@ -1,11 +1,11 @@
 <div id="imgHolder">
-  <img src="http://alikgriffin.com/sites/default/files/AlikGriffin_Santa_Monica_Pier_HDR_s.jpg">
+  <img ng-src="{{imageData}}">
 </div>
 
 <div id='quoteContainer'>
   <div id='centerQuote'>
     <h4><a id='quoteText'>{{quoteData.quote}}</a></h4>
-    <h4><a id='quoteAuthor'>{{quoteData.author}}</a></h4>
+    <h4><a ng-href= "https://www.google.com/#q={{quoteData.author}}" ng-click="searchAuthor" id='quoteAuthor'>{{quoteData.author}}</a></h4>
   </div>
 </div>
 

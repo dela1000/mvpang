@@ -8,7 +8,6 @@ angular.module('homeApp', [
   $routeProvider
   .when('/', {
     templateUrl: 'main.html',
-    controller: MainController,
-    resolve: MainController.resolve
+    controller: MainController
   })
 })

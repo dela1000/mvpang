@@ -5,6 +5,7 @@ angular.module('homeApp.main', [])
   $scope.quoteData = {};
   $scope.weatherData = {};
   $scope.movieData = {};
+  $scope.imageData = {};
 
   $scope.getZipCode = function () {
     Quotes.getZipCode()
@@ -16,7 +17,12 @@ angular.module('homeApp.main', [])
   $scope.getQuotes = function () {
     Quotes.getQuotes()
     .then(function (quoteData) {
-      $scope.quoteData = quoteData;
+      if (quoteData) {
+        $scope.quoteData = quoteData;
+      }else{
+        $scope.quoteData.quote = "One can never know for sure what a deserted area looks like."
+        $scope.quoteData.author = "George Carlin"
+      };;
     })
   }
 
@@ -35,16 +41,32 @@ angular.module('homeApp.main', [])
   $scope.getMovies = function () {
     Quotes.getMovies()
     .then(function (movieData) {
-      console.log("movieData.data: ", JSON.stringify(movieData.data, null, "\t"));
       if (movieData.data.Title) {
         $scope.movieData.title = movieData.data.Title;
       } else if (movieData.data.Response === "False") {
         $scope.movieData.title = "Jurassic Park";
       }
     })
+    var movieClick = function () {
+    movieData.data.Poster
+    };
   }
 
-  $scope.getZipCode()
-  $scope.getQuotes()
-  $scope.getMovies()
+  $scope.getImage = function () {
+    Quotes.getImage()
+    .then(function (imageData) {
+      if (imageData.url) {
+        $scope.imageData = imageData.url
+
+      }else{
+        $scope.imageData = "http://alikgriffin.com/sites/default/files/AlikGriffin_Santa_Monica_Pier_HDR_s.jpg"
+      };
+    })
+  }
+
+  $scope.getImage();
+  $scope.getZipCode();
+  $scope.getQuotes();
+  $scope.getMovies();
+
 })
