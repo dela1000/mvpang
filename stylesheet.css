@@ -10,6 +10,7 @@ body {
 a {
   color:#ededed;
   text-decoration: none !important;
+  text-shadow: 2px 2px black;
 }
 
 a:visited {
@@ -17,13 +18,11 @@ a:visited {
 }
 
 #quoteContainer{
-  position:absolute;
-  width: 100%;
-  z-index:15;
-  top:46%;
-  left:37%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
   text-align: center;
-  margin:-100px auto auto -160px;
 }
 
 .quotemark{
@@ -43,7 +42,7 @@ a:visited {
 
 #quoteAuthor{
   text-decoration: none !important;
-  font-size: 15px;
+  font-size: 16px;
   font-style: italic;
   text-align: center;
 }
