@@ -9,11 +9,11 @@ angular.module('homeApp.services', [])
   var getZipCode = function () {
     return $http({
       method: 'GET',
-      url: 'http://ipinfo.io'
+      url: 'https://ipinfo.io'
     })
     .then(function (response) {
       zipCode = response.data.postal
-      urlWeatherRequest = 'https://api.openweathermap.org/data/2.5/weather?zip='+zipCode+',us&appid='+zipKey+''
+      urlWeatherRequest = 'http://api.openweathermap.org/data/2.5/weather?zip='+zipCode+',us&appid='+zipKey+''
       return zipCode
     })
   }
@@ -24,7 +24,7 @@ angular.module('homeApp.services', [])
   var getMovies = function () {
     var randomID = Math.floor(Math.random()*1000000);
     return  $http({
-      url: 'https://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey='+movieAPIkey+'&callback=JSON_CALLBACK',
+      url: 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey='+movieAPIkey+'&callback=JSON_CALLBACK',
       jsonp: 'callback',
       method: 'JSONP'
     })
@@ -36,7 +36,7 @@ angular.module('homeApp.services', [])
   var getQuotes = function () {
     return $http({
       method: 'GET',
-      url: 'https://api.theysaidso.com/qod'
+      url: 'http://api.theysaidso.com/qod'
     })
     .then(function (response) {
       return response.data.contents.quotes[0]
