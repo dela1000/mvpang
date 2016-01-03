@@ -7,9 +7,9 @@ angular.module('homeApp.services', [])
   var zipKey = '2dbfcf67fd57090032db293a66c5ae52'
 
   var getZipCode = function () {
-    return $http({
+    return $https({
       method: 'GET',
-      url: 'https://ipinfo.io'
+      url: 'http://ipinfo.io'
     })
     .then(function (response) {
       zipCode = response.data.postal
