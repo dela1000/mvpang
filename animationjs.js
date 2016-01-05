@@ -1,4 +1,5 @@
 d3.select("body")
 .transition()
-.duration(2000)
+.delay(200)
+.duration(1600)
 .style('opacity', 1)

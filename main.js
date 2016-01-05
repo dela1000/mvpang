@@ -61,7 +61,7 @@ angular.module('homeApp.main', ['ngAnimate'])
 })
 
 
-  .controller('AppController', function($scope){
+.controller('AppController', function($scope){
     $scope.imageList = [
       {
       position: 1,
@@ -81,7 +81,7 @@ angular.module('homeApp.main', ['ngAnimate'])
     },
     {
       position: 3,
-      quote: "You don't understand! I coulda had class. I coulda been a contender. I could've been somebody, instead of a bum, which is what I am.`",
+      quote: "You don't understand! I coulda had class. I coulda been a contender. I could've been somebody, instead of a bum, which is what I am.",
       character: "Terry Malloy",
       actor: "Marlon Brando",
       movie: "On the Waterfront",
@@ -281,7 +281,7 @@ angular.module('homeApp.main', ['ngAnimate'])
     },
     {
       position: 28,
-      quote: "Play it, Sam. Play 'As Time Goes By.'9",
+      quote: "Play it, Sam. Play 'As Time Goes By.'",
       character: "Ilsa Lund",
       actor: "Ingrid Bergman",
       movie: "Casablanca",
@@ -601,7 +601,7 @@ angular.module('homeApp.main', ['ngAnimate'])
     },
     {
       position: 68,
-      quote: "Here's Johnny!",
+      quote: "Heeeere's Johnny!",
       character: "Jack Torrance",
       actor: "Jack Nicholson",
       movie: "The Shining",
@@ -862,11 +862,91 @@ angular.module('homeApp.main', ['ngAnimate'])
       actor: "Leonardo DiCaprio",
       movie: "Titanic",
       year: 1997
+    },
+    {
+      position: 101,
+      quote: "The first rule of fight club is you do not talk about fight club",
+      character: "Tyler Durden",
+      actor: "Brad Pitt",
+      movie: "Fight Club",
+      year: 1999
+    },
+    {
+      position: 102,
+      quote: "Yipee-ki-yay, motherfucker",
+      character: "John McClane",
+      actor: "Bruce Willis",
+      movie: "Die Hard",
+      year: 1988
+    },
+    {
+      position: 103,
+      quote: "English, motherfucker! Do you speak it?",
+      character: "Jules Winnfield",
+      actor: "Samuel L. Jackson",
+      movie: "Pulp Fiction",
+      year: 1994
+    },
+    {
+      position: 104,
+      quote: "Say hello to my little friend!",
+      character: "Tony Montana",
+      actor: "Al Pacino",
+      movie: "Scarface",
+      year: 1983
+    },
+    {
+      position: 105,
+      quote: "The greatest trick the Devil ever pulled was convincing the world he didn't exist.",
+      character: "Verbal",
+      actor: "Kevin Spacey",
+      movie: "The Usual Suspects",
+      year: 1995
+    },
+    {
+      position: 106,
+      quote: "I have to remind myself that some birds aren't meant to be caged, that's all. Their feathers are just too bright... and when they fly away, the part of you that knows it was a sin to lock them up does rejoice... but still, the place you live is that much more drab and empty that they're gone. I guess I just miss my friend.",
+      character: "Ellis Boyd 'Red' Redding",
+      actor: "Morgan Freeman",
+      movie: "The Shawshank Redemption",
+      year: 1994
+    },
+    {
+      position: 107,
+      quote: "Help! Help! I'm bein' repressed!",
+      character: "Dennis",
+      actor: "Michael Palin",
+      movie: "Monty Python and the Holy Grail",
+      year: 1975
+    },
+    {
+      position: 108,
+      quote: "Shut the fuck up, Donny!",
+      character: "Walter Sobchak",
+      actor: "John Goodman",
+      movie: "The Big Lebowski",
+      year: 1998
+    },
+    {
+      position: 109,
+      quote: "We were somewhere around Barstow on the edge of the desert when the drugs began to take hold.",
+      character: "Raoul Duke",
+      actor: "Johnny Depp",
+      movie: "Fear and Loathing in Las Vegas",
+      year: 1998
+    },
+    {
+      position: 110,
+      quote: "Hello. My name is Inigo Montoya. You killed my father. Prepare to die.",
+      character: "Inigo Montoya",
+      actor: "Mandy Patinkin",
+      movie: "The Princess Bride",
+      year: 1987
     }
   ]
 })
 
-.directive('gallery', function($interval, $window){
+.directive('gallery', function($interval){
   return {
     restrict: 'A',
     templateUrl: 'quoteCenter.html',
@@ -874,16 +954,14 @@ angular.module('homeApp.main', ['ngAnimate'])
       images: '='
     },
     link: function(scope, element, attributes){
-      var randomNumber = _.random(1,100)
+      var randomNumber = _.random(1,110)
       scope.nowShowing = randomNumber;
 
       $interval(function showNext () {
         scope.nowShowing = _.random(1,100);
-      }, 8000);
+      }, 7500);
     }
   };
-
-
 })
 
 

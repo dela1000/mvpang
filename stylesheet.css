@@ -52,7 +52,7 @@ QUOTE CONTAINER
 
 #quoteText{
   text-align: center;
-  font-size: 35px;
+  font-size: 45px;
 }
 
 #quoteAuthor{
@@ -62,10 +62,12 @@ QUOTE CONTAINER
   text-align: center;
 }
 
-
 .fade-animation.ng-hide-add,
 .fade-animation.ng-hide-remove {
-  transition: all linear 0.5s;
+  -webkit-transition:1s linear all;
+  -moz-transition: 1s linear all;
+  -o-transition: 1s linear all;
+  transition:1s linear all;
 
   display:block !important;
   opacity:1;
@@ -122,11 +124,6 @@ MOVIE CONTAINER
   -webkit-box-shadow: 1px 1px 1px 1px black;
   box-shadow:         1px 1px 1px 1px black;
 }
-
-/*=============
-SEARCH CONTAINER
-==============*/
-
 
 /*=============
 BACKGROUND IMAGE
