@@ -19,7 +19,6 @@ app.use(express.static(path.join(__dirname)));
 
 //our lonely route for our single page app
 app.get('/', function(req, res) {
-  console.log("req: ", req)
   res.sendFile(__dirname + 'index.html');
 });
 

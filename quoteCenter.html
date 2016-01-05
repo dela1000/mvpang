@@ -1,0 +1,24 @@
+<div id='quoteContainer' >
+  <div id='centerQuote'>
+
+    <a id='quoteText'
+       class="fade-animation"
+       ng-repeat="image in images"
+       ng-show="nowShowing==$index"
+       >
+
+         <i class="quotemark fa fa-quote-left"></i>
+         {{image.quote}}
+        <p id='quoteAuthor'> #{{image.position}}</p>
+       <h5 id='quoteAuthor'><i class="icon fa fa-user"></i>
+
+       {{image.character}}
+       ({{image.actor}})
+       </h5>
+       <h5 id='quoteAuthor'>
+       {{image.movie}}, {{image.year}}
+       </h5>
+     </a>
+  </div>
+</div>
+

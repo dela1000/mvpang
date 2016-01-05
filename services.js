@@ -22,7 +22,6 @@ angular.module('homeApp.services', [])
   var movieAPIkey = 'ny97sdcpqetasj8a4v2na8va'
 
   var getMovies = function () {
-    var randomID = Math.floor(Math.random()*1000000);
     return  $http({
       url: 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey='+movieAPIkey+'&callback=JSON_CALLBACK',
       jsonp: 'callback',

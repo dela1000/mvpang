@@ -1,3 +1,7 @@
+/*=============
+GENERAL
+==============*/
+
 body {
   opacity: 0;
   margin: 0;
@@ -17,8 +21,19 @@ a:visited {
   color:#ededed;
 }
 
+.icon{
+  position: relative;
+  top:-3px;
+}
+
+/*=============
+QUOTE CONTAINER
+==============*/
+
 #quoteContainer{
   position: fixed;
+  min-width: 800px;
+  max-width: 100%;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
@@ -32,7 +47,7 @@ a:visited {
 
 #centerQuote{
   min-width: 200px;
-  max-width:700px;
+  max-width: 100%;
 }
 
 #quoteText{
@@ -47,10 +62,21 @@ a:visited {
   text-align: center;
 }
 
-.icon{
-  position: relative;
-  top:-3px;
+
+.fade-animation.ng-hide-add,
+.fade-animation.ng-hide-remove {
+  transition: all linear 0.5s;
+
+  display:block !important;
+  opacity:1;
 }
+.fade-animation.ng-hide {
+  opacity:0;
+}
+
+/*=============
+WEATHER CONTAINER
+==============*/
 
 #weatherContainer{
   position: fixed;
@@ -68,6 +94,10 @@ a:visited {
 #weatherContainer a:visited{
   color:#ededed;
 }
+
+/*=============
+MOVIE CONTAINER
+==============*/
 
 #movieContainer{
   position: fixed;
@@ -92,6 +122,15 @@ a:visited {
   -webkit-box-shadow: 1px 1px 1px 1px black;
   box-shadow:         1px 1px 1px 1px black;
 }
+
+/*=============
+SEARCH CONTAINER
+==============*/
+
+
+/*=============
+BACKGROUND IMAGE
+==============*/
 
 #imgHolder{
   position: fixed;
