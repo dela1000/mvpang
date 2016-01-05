@@ -29,14 +29,33 @@ angular.module('homeApp.main', ['ngAnimate'])
   $scope.getMovies = function () {
     Main.getMovies()
     .then(function (movieData) {
-      for (var i = 0; i < movieData.data.movies.length; i++) {
-        $scope.movieData[movieData.data.movies[i].title] = {
+
+      var movieTypePairs = {
+        box_office: 'Box Office',
+        upcoming: 'Upcoming',
+        in_theaters: 'In Theaters',
+        opening: 'Opening'
+      }
+
+      var movieType = movieTypePairs[movieData.data.random]
+
+      var moviesShown = movieData.data.movies.length;
+
+      if(movieData.data.movies.length > 10){
+        moviesShown = 10;
+      }
+
+      for (var i = 0; i < moviesShown; i++) {
+        $scope.movieData[i] = {
           title: movieData.data.movies[i].title,
           release: movieData.data.movies[i].release_dates.theater,
           poster: movieData.data.movies[i].posters.thumbnail,
           link: movieData.data.movies[i].links.alternate,
-          synopsis: movieData.data.movies[i].synopsis
+          synopsis: movieData.data.movies[i].synopsis,
+          movieType: movieType
         }
+        console.log("$scope.movieData: ", JSON.stringify($scope.movieData, null, "\t"));
+
       };
     })
   }

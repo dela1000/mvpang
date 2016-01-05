@@ -22,12 +22,22 @@ angular.module('homeApp.services', [])
   var movieAPIkey = 'ny97sdcpqetasj8a4v2na8va'
 
   var getMovies = function () {
+    var movieTypes = [
+      'box_office',
+      'upcoming',
+      'in_theaters',
+      'opening'
+    ];
+
+    var index = movieTypes[_.random(0,3)]
+
     return  $http({
-      url: 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey='+movieAPIkey+'&callback=JSON_CALLBACK',
+      url: 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/'+index+'.json?apikey='+movieAPIkey+'&callback=JSON_CALLBACK',
       jsonp: 'callback',
       method: 'JSONP'
     })
     .success(function(response) {
+      response.random = index;
       return response
     });
   };

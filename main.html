@@ -9,23 +9,28 @@
   <h4><a ng-href='http://www.weather.com/weather/today/l/{{weatherData.zip}}:US' id='weatherCity'>{{weatherData.city}}</a></h4>
 </div>
 
-<div id='movieContainer'>
 
-  <div ng-repeat='movie in movieData' ng-href='{{movie.link}}'>
-      <div class="posterContainer">
-        <a ng-href='{{movie.link}}' title="{{movie.release}} - {{movie.synopsis}}">
-          <img
-            class="shadow"
-            ng-src='{{movie.poster}}'
-            >
-            <br>
-        <a>
-      </div>
-      <a ng-href='{{movie.link}}' title='{{movie.release}}'>
-        {{movie.title}}
-      </a>
+<div>
+  <div id="movieType">
+    <a >{{movieData[0].movieType}}</a>
   </div>
-</div>
+  <div id='movieContainer'>
+    <div ng-repeat='movie in movieData' ng-href='{{movie.link}}'>
+        <div class="posterContainer">
+          <a ng-href='{{movie.link}}' title="{{movie.release}} - {{movie.synopsis}}">
+            <img
+              class="shadow"
+              ng-src='{{movie.poster}}'
+              >
+              <br>
+          <a>
+        </div>
+        <a ng-href='{{movie.link}}' title='{{movie.release}}'>
+          {{movie.title}}
+        </a>
+    </div>
+  </div>
+<div>
 
 <div id='imgTitleContainer' title='{{imageData.explanation}}'>
   <a> APOD - {{imageData.title}}
