@@ -54,9 +54,8 @@ angular.module('homeApp.main', ['ngAnimate'])
           synopsis: movieData.data.movies[i].synopsis,
           movieType: movieType
         }
-        console.log("$scope.movieData: ", JSON.stringify($scope.movieData, null, "\t"));
-
       };
+      console.log("$scope.movieData[0].title: ", $scope.movieData[0].title)
     })
   }
 
@@ -77,7 +76,16 @@ angular.module('homeApp.main', ['ngAnimate'])
   }
 
   $scope.getImage(); // first API call
+
+  $scope.GetMoreMovies = function ($scope) {
+    $scope.nextSet = function() {
+      $scope.movieData = {};
+      $scope.movieData[$scope.getMovies()];
+
+    }
+  }
 })
+
 
 
 .controller('AppController', function($scope){

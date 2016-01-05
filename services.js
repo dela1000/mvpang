@@ -21,7 +21,11 @@ angular.module('homeApp.services', [])
   //Had to all the callback to get over the "uncaught error :" problem caused by JSONP
   var movieAPIkey = 'ny97sdcpqetasj8a4v2na8va'
 
+  var counter = 0;
+
   var getMovies = function () {
+
+
     var movieTypes = [
       'box_office',
       'upcoming',
@@ -29,7 +33,12 @@ angular.module('homeApp.services', [])
       'opening'
     ];
 
-    var index = movieTypes[_.random(0,3)]
+    var index = movieTypes[counter]
+    if (counter === 3) {
+      counter = 0
+    }else{
+      counter++;
+    }
 
     return  $http({
       url: 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/'+index+'.json?apikey='+movieAPIkey+'&callback=JSON_CALLBACK',
@@ -78,11 +87,16 @@ angular.module('homeApp.services', [])
     })
   }
 
+  var getMoreMovies = function () {
+    getMovies()
+  }
+
   return {
     getImage: getImage,
     getZipCode: getZipCode,
     getQuotes: getQuotes,
     getWeather: getWeather,
-    getMovies: getMovies
+    getMovies: getMovies,
+    getMoreMovies: getMoreMovies
   }
 })
