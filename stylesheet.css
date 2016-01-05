@@ -54,8 +54,9 @@ QUOTE CONTAINER
 
 @keyframes quoteChanger {
   0%   { opacity: 0; }
-  25% { opacity: 1; }
-  80% { opacity: 1; }
+  5%  { opacity: 0; }
+  30% { opacity: 1; }
+  90% { opacity: 1; }
 }
 
 .quotemark{

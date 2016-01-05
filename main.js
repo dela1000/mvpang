@@ -958,8 +958,8 @@ angular.module('homeApp.main', ['ngAnimate'])
       scope.nowShowing = randomNumber;
 
       $interval(function showNext () {
-        scope.nowShowing = _.random(1,100);
-      }, 7500);
+        scope.nowShowing = _.random(1,110);
+      }, 10000);
     }
   };
 })
